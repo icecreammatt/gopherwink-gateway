@@ -69,7 +69,7 @@ func listLights(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 		return
 	}
 
-	_, err = conn.Write([]byte("test_auth_key\n"))
+	_, err = conn.Write([]byte(AUTH_KEY))
 	if err != nil {
 		fmt.Fprintf(w, "Error writing auth key: %s", err.Error())
 		return
